@@ -18,6 +18,7 @@ end
         dsl.organizations.first
       end
 
+      its(:name) { is_expected.to eq "Developer" }
       its(:members) { is_expected.to eql %w(hoge fuga piyo) }
     end
   end
