@@ -9,6 +9,7 @@ module Organicat
     def initialize(path)
       @result = OpenStruct.new(
         organizations: [],
+        repositories: [],
       )
       contents = open(path).read
       instance_eval(contents)
@@ -18,6 +19,10 @@ module Organicat
 
     def organization(name, &block)
       @result.organizations << Organization.new(name, &block).result
+    end
+
+    def repository(name, &block)
+      @result.repositories << Repository.new(name, &block).result
     end
   end
 end
