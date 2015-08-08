@@ -6,7 +6,7 @@ module Organicat
       @result = OpenStruct.new({
         name: name,
         members: [],
-        organizations: []
+        teams: []
       })
 
       instance_eval(&block)
@@ -18,8 +18,8 @@ module Organicat
       @result.members = repository_members
     end
 
-    def organizations(repository_organizations)
-      @result.organizations = repository_organizations
+    def teams(repository_teams)
+      @result.teams = repository_teams
     end
   end
 end
