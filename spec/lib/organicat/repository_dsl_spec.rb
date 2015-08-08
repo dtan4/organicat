@@ -8,7 +8,7 @@ module Organicat
           <<-EOS
 repository "dtan4/organicat" do
   members %w(hoge fuga piyo)
-  organizations %w(dtan4/Developer)
+  teams %w(dtan4/Developer)
 end
           EOS
         end
@@ -21,7 +21,7 @@ end
 
       its(:name) { is_expected.to eq "dtan4/organicat" }
       its(:members) { is_expected.to eql %w(hoge fuga piyo) }
-      its(:organizations) { is_expected.to eql %w(dtan4/Developer) }
+      its(:teams) { is_expected.to eql %w(dtan4/Developer) }
     end
   end
 end
