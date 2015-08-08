@@ -2,11 +2,11 @@ require "spec_helper"
 
 module Organicat
   describe DSL do
-    describe "Organization" do
+    describe "Team" do
       let(:orgfile) do
         OrgFile.create do
           <<-EOS
-organization "Developer" do
+team "Developer" do
   members %w(hoge fuga piyo)
 end
           EOS
@@ -15,7 +15,7 @@ end
 
       subject do
         dsl = described_class.parse(orgfile)
-        dsl.organizations.first
+        dsl.teams.first
       end
 
       its(:name) { is_expected.to eq "Developer" }

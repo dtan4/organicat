@@ -1,5 +1,5 @@
 module Organicat
-  class DSL::Context::Organization
+  class DSL::Context::Team
     attr_reader :result
 
     def initialize(name, &block)
@@ -12,8 +12,8 @@ module Organicat
 
     private
 
-    def members(organization_members)
-      @result.members = organization_members
+    def members(team_members)
+      @result.members = team_members
     end
   end
 end
